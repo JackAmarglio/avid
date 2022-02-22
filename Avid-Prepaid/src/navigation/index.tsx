@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, NavigatorScreenParams } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import Splash from 'screens/Splash';
 import Landing from 'screens/Landing';
+import Introduce from "screens/Introduce";
+import Verify from 'screens/Verify';
+import Description from 'screens/Description';
+import {TabStack, TabStackParamList} from './TabStack';
 
 const theme = {
   ...DefaultTheme,
@@ -13,11 +16,14 @@ const theme = {
   },
 };
 
+const Stack = createStackNavigator<RootStackParamList>();
+
+
 export type RootStackParamList = {
   Landing: undefined;
+  TabStack: NavigatorScreenParams<TabStackParamList>;
 };
 
-const Stack = createStackNavigator<RootStackParamList>();
 
 const Navigation = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +47,12 @@ const Navigation = () => {
     <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}>
+        {/* <Stack.Screen name="Landing" component={Landing} />
+        <Stack.Screen name="Introduce" component={Introduce} />
+        <Stack.Screen name="Verify" component={Verify} />
+        <Stack.Screen name="Description" component={Description} /> */}
         <Stack.Screen name="Landing" component={Landing} />
+        <Stack.Screen name="TabStack" component={TabStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,7 @@
 import { Box, Button, Center, Image, Text, ScrollView } from "native-base";
 import React from "react";
 import { Dimensions, ImageBackground } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import Carousel from 'react-native-snap-carousel';
 
 const { width } = Dimensions.get("screen");
 
@@ -17,7 +17,7 @@ const Introduce = () => {
             <Center>
                 <Button bgColor="#043e93" color="white" borderRadius="2xl" w="1/2" mt="5" size="md">Lets Get Started</Button>
                 <Image source={require("assets/imac-phone.png")} mt="10" resizeMode='contain' style={{ height: width * 3 / 7 }} />
-                <Text color="black" fontSize="2xl" padding="6" fontWeight="thin">
+                <Text color="black" fontSize="xl" padding="6" fontWeight="thin">
                     Avid Prepaid Visa Debit card allows you to get your federal
                     benefits up to 6 days early and all other direct deposits up to
                     2 days early. Its digital banking at its best! With no overdraft fees or minimum balance requirement,
@@ -28,10 +28,9 @@ const Introduce = () => {
             </Center>
             <Box bgColor='gray.100' paddingBottom='10'>
                 <Center>
-                    <Image source={require("assets/ppl-phone-img.png")} mt='10' resizeMode='contain' style={{ height: width * 3 / 5 }} />
-                    <Box padding="6" borderRadius='3xl' mt='10' w='4/5' bgColor='white'>
-                        <Text color="#0386ff" fontSize="3xl" fontWeight='semibold'>Avid Prepaid</Text>
-                        <Text color="#0386ff" fontSize="3xl" fontWeight='semibold'>Digital Backing at its Best</Text>
+                    <Image source={require("assets/ppl-phone-img.png")} mt='7' resizeMode='contain' style={{ height: width * 2 / 3 }} />
+                    <Box padding="6" borderRadius='3xl' mt='10' w='96' bgColor='white'>
+                        <Text color="#0386ff" fontSize="2xl" fontWeight='semibold'>Avid Prepaid Digital Backing at its Best</Text>
                         <Text color="black" mt='3' fontSize='md'>Use Avid Prepaid anywhere Visa
                             debit is accepted worldwide. Available for use at major
                             retailers, gas stations, pharmacies, and online. Access cash at
@@ -57,26 +56,26 @@ const Introduce = () => {
                     </Box>
                 </Center>
             </Box>
-            <FlatList 
-                horizontal
+            <Carousel
                 data={values}
-                keyExtractor={(item, index) => index.toString()}
+                sliderWidth={width - 16}
+                itemWidth={width - 16}
                 renderItem={({item}) => (
-                    <Center>
-                        <Box bgColor='gray.100' borderRadius='3xl' w='96' ml="10" mt='10' alignItems='center'>
-                            <Image source={item.src} mt='10' />
-                            <Text color="black" fontSize="3xl" fontWeight='semibold' textAlign='center' mt='10'>{item.title}</Text>                        
-                            <Box padding="6">
-                                {item.subtitles.map(subtitle => (
-                                    <Box flexDirection="row">
-                                        <Box bgColor="black" w="1" h="1" mt="3" />
-                                        <Text color="black" ml="3" fontSize='md'>{subtitle}</Text>
-                                    </Box>
-                                ))}
-                            </Box>
+                <Center>
+                    <Box bgColor='gray.100' borderRadius='3xl' w='96' ml="6" mt='10' alignItems='center'>
+                        <Image source={item.src} mt='10' />
+                        <Text color="black" fontSize="2xl" fontWeight='semibold' textAlign='center' mt='10'>{item.title}</Text>                        
+                        <Box padding="6">
+                            {item.subtitles.map(subtitle => (
+                                <Box flexDirection="row">
+                                    <Box bgColor="black" w="1" h="1" mt="3" />
+                                    <Text color="black" ml="3" fontSize='md'>{subtitle}</Text>
+                                </Box>
+                            ))}
                         </Box>
-                    </Center>        
-                )}
+                    </Box>
+                </Center>        
+            )}
             />
             <ImageBackground source={require("assets/RectangleDots.png")} style={{ width: '100%', marginTop: 40 }}>
                 <Box bg="white" rounded="3xl" m="6">
@@ -84,7 +83,7 @@ const Introduce = () => {
                     <Text color="black" textAlign="center" fontSize="md" padding="5">December 2021 SSI and VA payments were made availble to recipients on December 1st, 2021 by most banks and Direct Express</Text>
                 </Box>
                 <Box bg="white" rounded="3xl" m="6" padding="5">
-                    <Text color="blue.500" fontSize="3xl" fontWeight='semibold'>Your Federal Benefits Made Easy</Text>
+                    <Text color="blue.500" fontSize="2xl" fontWeight='semibold'>Your Federal Benefits Made Easy</Text>
                     <Box flexDirection="row">
                         <Box bgColor="black" w="1" h="1" mt="8" />
                         <Text color="black" fontSize="xl" mt="5" ml="3">Avid Prepaid process the deposits as soon as the Government sends notice that it intends on making a payment to the customer. This occurs several days before the actual payment date. For example, SSI and VA Payments that are paid on the first of each month are credited to the Avid Prepaid account up to 6 days early every month and all other payments are credited up to 2 days early.</Text>
@@ -97,7 +96,7 @@ const Introduce = () => {
                 </Box>
             </ImageBackground>
             <Box padding="6">
-                <Text color="#0386ff" fontSize="3xl" fontWeight='semibold'>
+                <Text color="#0386ff" fontSize="2xl" fontWeight='semibold'>
                     Superior Service Without The Wait &amp; Award Winning Support</Text>
                 <Text color="black" fontSize="xl" mt="5">
                     Are you tired of attempting to speak with someone, having to
@@ -124,7 +123,7 @@ const Introduce = () => {
                     <Box bgColor="black" w="1" h="1" mt="3" />
                     <Text color="black" fontSize="xl" ml="2">Our highly trained live representatives will assist you with anything regarding Avid Prepaid</Text>
                 </Box>
-                <Text color="blue.700" fontSize="4xl" mt="5" ml="5" fontWeight="bold">Lets Get Started</Text>
+                <Text color="blue.700" fontSize="2xl" mt="5" ml="5" fontWeight="bold">Lets Get Started</Text>
                 <Button bgColor="blue.500" w="1/2" borderRadius="3xl" mt="5" ml="5">Lets Get Started</Button>
                 <Image source={require("assets/service-img.png")} resizeMode='contain' borderRadius='3xl' mt="5" height={(width - 16) * 8 / 10} />
             </Box>

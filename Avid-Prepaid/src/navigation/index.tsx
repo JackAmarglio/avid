@@ -3,9 +3,6 @@ import { NavigationContainer, DefaultTheme, NavigatorScreenParams } from '@react
 import { createStackNavigator } from '@react-navigation/stack';
 import Splash from 'screens/Splash';
 import Landing from 'screens/Landing';
-import Introduce from "screens/Introduce";
-import Verify from 'screens/Verify';
-import Description from 'screens/Description';
 import {TabStack, TabStackParamList} from './TabStack';
 
 const theme = {

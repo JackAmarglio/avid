@@ -1,5 +1,5 @@
 import React from 'react';
-import {Icon} from 'native-base';
+import {Icon, Image} from 'native-base';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Introduce from 'screens/Introduce';
 import Verify from 'screens/Verify';
@@ -20,7 +20,7 @@ export const TabStack = () => {
         name="Introduce"
         options={{
           tabBarLabel: 'Introduce',
-          // tabBarIcon: ({color}) => <Icon as={MaterialIcons} name="introduce" size="6" color={color} />,
+          tabBarIcon: () => <Image source={require('assets/introduce.jpg')} size='6' />,
         }}
         component={Introduce}
       />
@@ -28,7 +28,7 @@ export const TabStack = () => {
         name="Verify"
         options={{
           tabBarLabel: 'Verify',
-          // tabBarIcon: ({color}) => <Icon as={MaterialIcons} name="verify" size="6" color={color} />,
+          tabBarIcon: () => <Image source={require('assets/verify_blog.jpg')} size='8' mt="0.5" />,
         }}
         component={Verify}
       />
@@ -36,7 +36,7 @@ export const TabStack = () => {
         name="Description"
         options={{
           tabBarLabel: 'Description',
-          // tabBarIcon: ({color}) => <Icon as={MaterialIcons} name="description" size="6" color={color} />,
+          tabBarIcon: () => <Image source={require('assets/description.jpg')} size='6' />,
         }}
         component={Description}
       />

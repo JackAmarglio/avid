@@ -1,17 +1,24 @@
-import { Box, Button, Center, Image, Text, ScrollView } from "native-base";
-import React from "react";
+import { Box, Button, Center, Image, Text, ScrollView, HStack } from "native-base";
+import React, { useState } from "react";
 import { Dimensions, ImageBackground } from "react-native";
 import Carousel from 'react-native-snap-carousel';
+import Verify from "screens/Verify";
 
 const { width } = Dimensions.get("screen");
 
 const Introduce = () => {
+    const [carouselIndex, setCarouselIndex] = useState(0);
     const values = [
-        {title: 'Mobile Banking', src: require('assets/phone-4x.png'), subtitles: ['Always know your account balance', 'Mobile Tap to Pay', 'Real Time Alerts including SMS, Email, and Push', 'Bank-to-Card and Card-to-Card', 'Virtual Card available']},
-        {title: 'Award Winning US Based Customer Service', src: require('assets/customerservice-4x.png'), subtitles: ['Most calls answered with hold times less than 30 seconds', 'Fanatical U.S based Customer Service team who cares about you', 'World-class award-winning bilingual representatives available 7 days a week to answer all of your questions']}, 
-        {title: 'Service and Alerts', src: require('assets/security-4x.png'), subtitles: ['Visa Zero Liability Protection', 'FDIC Insured', 'Peace of mind with Account Shield', 'Security Biometrics', 'Latest EMV chip technology']}, 
-        {title: 'Account Features', src: require('assets/credit-4x.png'), subtitles: ['No direct deposit fee', 'Reloadable at over a million retailers worldwide', 'Share money with friends and family with up to 4 companion accounts at no charge', 'Use anywhere Visa debit is accepted worldwide']}
+        { title: 'Mobile Banking', src: require('assets/phone-4x.png'), subtitles: ['Always know your account balance', 'Mobile Tap to Pay', 'Real Time Alerts including SMS, Email, and Push', 'Bank-to-Card and Card-to-Card', 'Virtual Card available'] },
+        { title: 'Award Winning US Based Customer Service', src: require('assets/customerservice-4x.png'), subtitles: ['Most calls answered with hold times less than 30 seconds', 'Fanatical U.S based Customer Service team who cares about you', 'World-class award-winning bilingual representatives available 7 days a week to answer all of your questions'] },
+        { title: 'Service and Alerts', src: require('assets/security-4x.png'), subtitles: ['Visa Zero Liability Protection', 'FDIC Insured', 'Peace of mind with Account Shield', 'Security Biometrics', 'Latest EMV chip technology'] },
+        { title: 'Account Features', src: require('assets/credit-4x.png'), subtitles: ['No direct deposit fee', 'Reloadable at over a million retailers worldwide', 'Share money with friends and family with up to 4 companion accounts at no charge', 'Use anywhere Visa debit is accepted worldwide'] }
     ]
+
+    const onChangeCarousel = (index: number) => {
+        setCarouselIndex(index);
+    }
+
     return (
         <ScrollView>
             <Center>
@@ -52,31 +59,39 @@ const Introduce = () => {
                             <Box bgColor="black" w="1" h="1" mt="3" />
                             <Text color="black" ml="3" fontSize='md'>Use anywhere Visa debit is accepted</Text>
                         </Box>
-                        <Button bgColor="blue.700" mt="5" ml="5" w="1/2" color="white" borderRadius="3xl">Learn More</Button>
+                        <Center>
+                            <Button bgColor="blue.700" mt="5" ml="5" w="1/2" color="white" borderRadius="3xl">Learn More</Button>
+                        </Center>
                     </Box>
                 </Center>
             </Box>
             <Carousel
+                onSnapToItem={onChangeCarousel}
                 data={values}
                 sliderWidth={width - 16}
                 itemWidth={width - 16}
-                renderItem={({item}) => (
-                <Center>
-                    <Box bgColor='gray.100' borderRadius='3xl' w='96' ml="6" mt='10' alignItems='center'>
-                        <Image source={item.src} mt='10' />
-                        <Text color="black" fontSize="2xl" fontWeight='semibold' textAlign='center' mt='10'>{item.title}</Text>                        
-                        <Box padding="6">
-                            {item.subtitles.map(subtitle => (
-                                <Box flexDirection="row">
-                                    <Box bgColor="black" w="1" h="1" mt="3" />
-                                    <Text color="black" ml="3" fontSize='md'>{subtitle}</Text>
-                                </Box>
-                            ))}
+                renderItem={({ item }) => (
+                    <Center>
+                        <Box bgColor='gray.100' borderRadius='3xl' w='96' ml="6" h="lg" mt='10' alignItems='center'>
+                            <Image source={item.src} mt='10' />
+                            <Text color="black" fontSize="2xl" fontWeight='semibold' textAlign='center' mt='10'>{item.title}</Text>
+                            <Box padding="6">
+                                {item.subtitles.map(subtitle => (
+                                    <Box flexDirection="row">
+                                        <Box bgColor="black" w="1" h="1" mt="3" />
+                                        <Text color="black" ml="3" fontSize='md'>{subtitle}</Text>
+                                    </Box>
+                                ))}
+                            </Box>
                         </Box>
-                    </Box>
-                </Center>        
-            )}
+                    </Center>
+                )}
             />
+            <HStack alignItems="center" justifyContent="center" mt="10">
+                {[0, 1, 2, 3].map(item =>
+                    <Box w="3" h="3" borderRadius="full" bgColor={item === carouselIndex ? 'black' : 'gray.400'} mx="2" />
+                )}
+            </HStack>
             <ImageBackground source={require("assets/RectangleDots.png")} style={{ width: '100%', marginTop: 40 }}>
                 <Box bg="white" rounded="3xl" m="6">
                     <Image source={require("assets/fbe-calendar_DA_v2.png")} style={{ height: (width - 24) * 3.5 / 8, resizeMode: "contain" }} />
@@ -92,7 +107,9 @@ const Introduce = () => {
                         <Box bgColor="black" w="1" h="1" mt="8" />
                         <Text color="black" fontSize="xl" mt="5" ml="3">Federal benefits up to 6 days early and payroll and other deposits up to 2 days early</Text>
                     </Box>
-                    <Button bgColor="blue.500" w="1/2" borderRadius="3xl" mt="5">Learn More</Button>
+                    <Center>
+                        <Button bgColor="blue.500" w="1/2" borderRadius="3xl" mt="5">Learn More</Button>
+                    </Center>
                 </Box>
             </ImageBackground>
             <Box padding="6">

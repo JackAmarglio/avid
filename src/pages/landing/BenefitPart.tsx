@@ -5,7 +5,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 const BenefitPart = () => {
   return (
-    <div className="landing-benefits">
+    <div className="landing-benefits" id="service">
       <div
         className="w-full relative bg-white"
       >
@@ -51,7 +51,7 @@ const BenefitPart = () => {
                   sends notice that it intends on making a payment to the customer.
                   This occurs several days before the actual payment date. For
                   example, SSI and VA Payments that are paid on the first of each
-                  month are credited to their Avid Prepaid account up to 6 days
+                  month are credited to their account up to 6 days
                   early every month and all other payments are credited up to 2 days
                   early.<sup>1</sup>
                 </li>

@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useState } from "react";
 import InputMask from "react-input-mask";
 import axios from "axios";
 import PhoneNumberContext from "context/PhoneNumber";
@@ -21,14 +21,14 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   // setChecked,
   // setCheck,
-  setEighthDialog,
+  // setEighthDialog,
   setFifthDialog,
   setFirstDialog,
-  setFourthDialog,
+  // setFourthDialog,
   setSecondDialog,
-  setSeventhDialog,
+  // setSeventhDialog,
   setSixthDialog,
-  setThirdDialog,
+  // setThirdDialog,
   // setFirstName,
   // setLastName,
   // setSocialSecurity,
@@ -79,15 +79,15 @@ const SignUpForm = (props: any) => {
   const [inputFlag, setInputFlag] = useState(true);
   const [error, setError] = useState("");
   const [tab, setTab] = useState(3);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [start, setStart] = useState(true);
 
-  const saveInfo = (step: number) => {
-    const steps = [
-      "mobile-phone",
-      "email",
-    ];
-  };
+  // const saveInfo = (steps: number) => {
+  //   const step = [
+  //     "mobile-phone",
+  //     "email",
+  //   ];
+  // };
 
   // const addressRequest = () => {
   //   axios
@@ -130,14 +130,14 @@ const SignUpForm = (props: any) => {
           response.data.status === "Success"
             ? () => {
                 setPhoneCode(true);
-                saveInfo(1);
+                // saveInfo(1);
               }
             : setPhoneCode(false)
         )
         .catch((err: any) => console.log(err));
       //tmp
       setPhoneCode(true);
-      saveInfo(1);
+      // saveInfo(1);
     }
   };
 
@@ -332,14 +332,14 @@ const SignUpForm = (props: any) => {
                     Type of fee
                   </th>
                   <th className="payg-header" id="payg-header-1" scope="col">
-                    Avid GO!
+                    This company GO!
                   </th>
                   <th
                     className="monthly-header"
                     id="monthly-header-1"
                     scope="col"
                   >
-                    Avid Select
+                    Select
                   </th>
                 </tr>
               </thead>
@@ -547,7 +547,7 @@ const SignUpForm = (props: any) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  lf.avidprepaid.com
+                  lf.our company.com
                 </a>
                 .
               </p>
@@ -772,7 +772,7 @@ const SignUpForm = (props: any) => {
                         className="text-gray-500 border-2 border-gray-400 rounded-full py-3 px-6 box-border text-lg"
                         onClick={() => {
                           previousStep(0);
-                          saveInfo(1);
+                          // saveInfo(1);
                         }}
                       >
                         <FaAngleLeft className="mr-2 inline-block" />
@@ -782,7 +782,7 @@ const SignUpForm = (props: any) => {
                         className="bg-blue-500 text-white rounded-full py-3 px-6 text-lg"
                         onClick={() => {
                           nextstep(1);
-                          saveInfo(2);
+                          // saveInfo(2);
                         }}
                       >
                         Continue

@@ -1,7 +1,7 @@
 // import { useContext } from "react";
 // import InputMask from "react-input-mask";
 import React, { useState } from "react";
-import logo from "assets/image/logo.png";
+// import logo from "assets/image/logo.png";
 import imacPhone from "assets/image/imac-phone.png";
 import Container from "components/Container";
 import "animate.css/animate.min.css";
@@ -102,14 +102,14 @@ const IntroPart = () => {
         <div className="lg:flex-row flex-col flex landing-header mb-4 m-auto constrain">
           <div className="text-center w-full flex sm:block sm:w-auto md:text-left pb-4 sm:pb-2 md:pb-0">
             <img
-              src={logo}
+              src="https://ik.imagekit.io/aazw3gxwf2n/prod/works-logo.svg"
               alt="logo"
               className="inline-block logo-img h-9 mt-1 sm:mt-0 sm:h-10 cursor-pointer"
             />
             <div className="flex-grow text-right">
               <div onClick={openModal} className="block sm:hidden scale-90 origin-right	mt-0.5" >
                 <div className="text-blue-500 inline-block btn bg-white -mt-[4px]">
-                  Let's Get Started
+                  Apply job
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@ const IntroPart = () => {
                 <a href="#about">About</a>
               </li>
               <li className="flex-grow opacity-90 hover:opacity-100">
-                <a href="#services">Services</a>
+                <a href="#service">Services</a>
               </li>
               <li className="flex-grow opacity-90 hover:opacity-100">
                 <a href="#faq">FAQ</a>
@@ -130,7 +130,7 @@ const IntroPart = () => {
           <div className="text-center">
             <div onClick={openModal} className="hidden md:block" id="getStarted" >
               <div className="text-blue-500 inline-block btn bg-white -mt-[4px]">
-                Let's Get Started
+                Apply job
               </div>
             </div>
         </div>
@@ -138,25 +138,24 @@ const IntroPart = () => {
       </nav>
       <Container>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-start text-white pb-24 md:pb-16 pt-10">
-          <ScrollAnimation animateOnce={true} animateIn="animate__animated animate__fadeInLeft" animatePreScroll={true} delay={400}>
+          <ScrollAnimation animateOnce={false} animateIn="animate__animated animate__fadeInLeft" animatePreScroll={true} delay={400}>
             <div>
               <h1 style={{textShadow: '3px 3px 10px rgba(0,0,0,0.2)'}} className="leading-[1.13] mt-[20px] text-[3rem] sm:text-[3.75rem] md:text-[4.5rem] ">
                 Find the jobs&nbsp;
                 <br />
                 <b>of your dreams!</b>
-                <sup className="text-[13px] -top-[3em]">1</sup>
               </h1>
               <div className="max-w-md">
                 <div
                   onClick={openModal}
                   className="btn btn-large bg-white text-blue-600 w-full max-w-xs text-center mt-8"
                 >
-                  Let's Get Started
+                  Apply job
                 </div>
               </div>
             </div>
           </ScrollAnimation>
-          <ScrollAnimation animateOnce={true} animateIn="animate__animated animate__fadeInRight" animatePreScroll={true} delay={500}>
+          <ScrollAnimation animateOnce={false} animateIn="animate__animated animate__fadeInRight" animatePreScroll={true} delay={500}>
             <div className="hidden lg:flex items-end">
               <img
                 src={imacPhone}

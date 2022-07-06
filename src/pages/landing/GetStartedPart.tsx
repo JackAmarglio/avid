@@ -50,14 +50,14 @@ const GetStartedPart = () => {
               className="my-20 mx-auto text-center"
             >
               <h3 className="text-4xl font-semibold text-blue-500">
-                Sign up now!
+                Apply now!
               </h3>
               <p className="my-4 mb-5">
-                Click the button below and you can get signed up in a few minutes!
+                Click the button below and you can apply in a few minutes!
               </p>
               <div onClick={clickNavTrigger} >
                 <div className="bg-blue-500 inline-block btn text-white -mt-[4px]">
-                  Let's Get Started
+                  Apply
                 </div>
               </div>
             </div>

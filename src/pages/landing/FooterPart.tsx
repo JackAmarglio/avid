@@ -45,7 +45,7 @@ const FooterPart = () => {
             <br />
             <span>
               {
-                "1. How early you receive your payment will depend on your benefit type. The Early Access program from Avid Prepaid allows you to receive your funds when the Government sends notification that it intends to make a payment to you. This varies by month and by government agency, for example SSI and VA Early Access payments are usually made 6 days early and SSA payments that are paid on Wednesdays are usually paid on the preceding Friday or 5 days early. All payments are subject to notification from the Department of Treasury each month and may change any time. Please review the Avid Prepaid Cardholder Agreement for terms and conditions."
+                "1. How early you receive your payment will depend on your benefit type. The Early Access program from this company allows you to receive your funds when the Government sends notification that it intends to make a payment to you. This varies by month and by government agency, for example SSI and VA Early Access payments are usually made 6 days early and SSA payments that are paid on Wednesdays are usually paid on the preceding Friday or 5 days early. All payments are subject to notification from the Department of Treasury each month and may change any time. Please review the Avid Prepaid Cardholder Agreement for terms and conditions."
               }
               <br />
               {
